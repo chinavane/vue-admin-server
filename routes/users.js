@@ -9,8 +9,10 @@ var User = require('../models/user.model')
 
 
 router.get('/', userCtrl.list);
-router.get('/:id',userCtrl.remove);
-router.get('/update/:id',userCtrl.update);
+router.post('/', userCtrl.create);
+router.get('/:id', userCtrl.get);
+router.put('/:id',userCtrl.update);
+router.delete('/:id',userCtrl.remove);
 
 router.post('/refresh_token',function(req,res,next){
     var token = req.body.token;
